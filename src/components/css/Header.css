@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 80px;
+  background-color: var(--header-bg-color);
+  border-radius: 5px;
+  box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  overflow-y: hidden;
+}
+
+.logo {
+  padding: 10px 0 10px 15px;
+  width: 100px;
+}
+
+/* nav items CSS start*/
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
+  margin-right: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-items > ul > li {
+  padding: 20px;
+}
+
+.nav-items > ul > li:hover {
+  color: var(--orange);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 470px) {
+  .header {
+    height: 60px;
+  }
+  .header .logo {
+    width: 80px;
+  }
+  .nav-items > ul > li {
+    font-size: small;
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .header {
+    height: 50px;
+  }
+  .header .logo {
+    width: 60px;
+  }
+  .nav-items > ul > li {
+    font-size: x-small;
+    padding: 5px;
+  }
+}  

@@ -1,15 +1,15 @@
-#Learning react
+# Learning react
 
-/*
+# Git commands to store a files to github:
 git:
 git init
 git add .
 git commit -m "episode-01"
 git remote add origin https://github.com/rfathima/Learning-react.git 
 git push origin main
-*/
-/*
-npm - package manager - its a repository
+
+# npm :
+package manager - its a repository
 package.json is a configuration of npm , 
 using this below command we can config npm in our project, and it will generete the package.json file
 --------------->npm init
@@ -17,7 +17,7 @@ Important depencency(package) in our project is bundler
 bundler - All html,css,js needs to budle together (minified and compress before going to production)
 types of bundler (webpack, parser, vite, parcel, esbuild, rollup
 here using parcel
-#parcel
+# parcel
 -Dev Build
 -Local server
 -HMR = Hot Module Replacement (if u change anything in u r code it will change automatically in browser)
@@ -44,19 +44,16 @@ File watching algorithm - written in c++
 --------------->npm install -D parcel
 -D stands for developer version
 ^2.12.0
-diff b/w ^(caret) and ~(tilde)
+# diff b/w ^(caret) and ~(tilde)
 ^ - compatible to the version - if tomorrow 2.12.0 released it will update automaticaly (so always use this) minor version only upgrate , if 3.0.0 means its won't upgrade. because it will create lot many changes in your project , site may break
 ~ - approximately equalent to the version - will update you to all future patch version, without incrementing the minor version.
 npm install -D parcel - It will install package-lock.json + node_modules
 node_modules is a collection of dependancies(packages) huge file ( because its a transitive dependency which means we denpend parcel , parcel depend there own dependency and .......)
-package-lock.json
------------------
+# package-lock.json
 this file contains exact version of the dependencies/bundler(parcel) version, and lock over it!
 question: how many package.json in our project - most of them says 1, answer: Each dependencies having own package.json
-.gitignore
-----------
-This much big node module file we unable to put inside git, so here we can ignore
-/node_modules
+# .gitignore
+This much big node module file we unable to put inside git, so here we can ignore node_modules
 If you have package-lock and package.json we no need to save nodemodule in git,
 because we can regenerate with the help of package-lock and package.json (example we can delete the nodemodule folder and npm install)
 for me npx parcel index.html throws an error so in package.json i changed  "start": "Parcel index.html"
@@ -71,17 +68,15 @@ so i used npm start or npx parcel index.html also working
     "build": "parcel build index.html"
   },
   start is the developement version
-  build is the production command
-React in our project instaed CDN:
---------------------------------
+  build is the production comman
+
+# React in our project instaed CDN:
 npm install react
 npm install react-dom
 once install this react and react-dom we don't want cdn
-
 inside script tag type="module" which means that js file not just a script file inside we are also using import
 
-JSX
----
+# JSX
 React.createElement("h1", {id:'heading'}, "Learning React"); ---> its very difficult to the user perpective
 so facebook developers introduce JSX
 JSx- is a JS syntax to create react element easier
@@ -96,31 +91,30 @@ Babel is not created by fackbook, babel is a compiler.
 //JSX => React.createElement =>ReactElement-JS object => HTMLElement(render)
 const jsxHeading = <h1 id="heading">Learning React using JSX react</h1> ---> if its one line no need () close and open brace, if its a multiple line we need () mandatory
 
-//This is called React element
+# This is called React element
 const jsxHeading = (
   <h1 id="heading" tabIndex="5">
   Learning React using JSX react
   </h1>
 );
 
-
-In react everything component
-React component 2 types
+# React everything component
+# React component 2 types
 1. class based component - older code type
 2. functional component - new code
  
-react functional code is called just a normal js function
-*react function name start with capital letter otherwise its throw an error
-//React Component
+# react functional code is called just a normal js function
+# react function name start with capital letter otherwise its throw an error
+# React Component
 const HeadingComponent = () => (
     <div id="container">
         <h1 className="heading">Learning React Functional Component</h1>
     </div>
 );
-//Functional component redering in React
+# Functional component redering in React
 root.render(<HeadingComponent />);
 
-//component coposesion (composing component one another)
+# component coposesion (composing component one another)
 which means component inside component example-> <Title /> component we can inside another component
 //React Component
 const Title = () => (
@@ -128,7 +122,7 @@ const Title = () => (
         <h1 className="heading">Call one component inside another component</h1>
     </div>
 );
-//React Component
+# React Component
 const HeadingComponent = () => (
     <div id="container">
         <Title />
@@ -136,50 +130,50 @@ const HeadingComponent = () => (
     </div>
 );
 
-//js element we can call it as with {}
+# js element we can call it as with {}
 const element = <span>React Element</span>
 
 {element}
 
-css in react js file:
----------------------
-method 1: (2 carlybraces needed)
+# css in react js file:
+# method 1: (2 carlybraces needed)
 <div className="" style={{display:none}}>
 
-methode 2: seperate js object we can create and we can call
+# methode 2: seperate js object we can create and we can call
 const styleCard = {
     backgroundColor: "#f0f0f0",
 };
 <div className="" style={styleCard}>
 
-props(properties -parcing pros to a component - just a argument to the function) for dynamic data:
-----------------------
-const RestaurantCard = (props) => {
+# props(properties -parcing pros to a component - just a argument to the function) for dynamic data:
+    const RestaurantCard = (props) => {
     //this also same
     //const RestaurantCard = ({resName, cusine}) => {
     console.log(props);
 
-This below properties we pass like arguments and use  it like props.resName
+# This below properties we pass like arguments and use it like props.resName
     <RestaurantCard
-                resName="Magna Foods"
-                cusine="Biriyani,North Indian, Asian" 
-                starts="4.4"
-                munites="38 munites"
-                />
+      resName="Magna Foods"
+      cusine="Biriyani,North Indian, Asian" 
+      starts="4.4"
+      munites="38 munites"
+    />
 
-Config driven UI:
------------------
-the data is coming from backend, depence upon the data, UI should change
+# Config driven UI:
+The data is coming from backend, depence upon the data, UI should change
 
-map
----
+# map
 whenever use map need to use key property, index property not suggested
 
+# some of the useful extension in VS code:
 bracket pair colorization toggler
 prettier- code formatter
 ESLint
 Better Comments
 
+# chrome extension:
+CORS chrome extension
+JSON viewer
 
 /*
 *Headers
@@ -208,5 +202,20 @@ import component from "path"
 
 # React Hooks
 (Normal JS utility function)
+# i) UseState():
 -useState() - Superpowerful  State Variable in react
--useEffect() - 
+with the help of usestate we can change the actual dom to virdual dom easyly.
+# ii) useEffect():
+-useEffect() - with help of this we can call the api's once the page is rendered.
+
+# older website model:
+ -> Api call -> 50ms waiting time something -> then render the page
+
+# React application
+->Render a page -> then Api call (its a good user experience)
+
+# Reconcilation, React fiber, Diff algorithm introduced in react 16, with the healp of the algorithm 
+# do the virtual DOM compare the another virtual Dom or actual DOM and change the original DOM easily
+
+# Shimmer UI
+In mordern UI showing up a loader is not good practice so we need to show the empty template until the page load with the help of shimmer

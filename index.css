@@ -1,84 +1,115 @@
-body {
-    margin: 0;
-}
-.header {
-    display: flex;
-    justify-content: space-between;
-    background: beige;
-}
-
-.logo {
-    width: 200px;
+/* Select all CSS */
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: "Trirong", serif;
 }
 
-.logo-img {
-    width: 100px;
-    margin-left: 30px;
-    border-radius: 60px;
-    padding: 5px;
+/* all link CSS */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.nav-items {
-    display: flex;
-    align-items: center;
-    padding: 0px 20px;
+/* create global variable with :root selector */
+:root {
+  --header-bg-color: #ffffff;
+  --footer-bg-color: #ffffff;
+  --body-bg-color: #e3e3e3;
+  --input-bg: #f2f2f2;
+  --input-bg-focus: #dbdbdb;
+  --text-color: #000;
+  --light-green: #00ad1d;
+  --dark-green: #016034;
+  --orange: #d97919;
+  --light-orange: #ffaf60;
+  --dark-orange: #c26100;
+  --x-dark-orange: rgb(157, 42, 1);
+  --light-red: rgb(236, 56, 56);
+  --white: #fff;
+  --light-black: rgb(23, 23, 23);
+  --light-blue: #0463ac;
+  --dark-blue: #070062;
 }
 
-.nav-items > ul {
-    font-size: 19px;
-    display: flex;
-    list-style-type: none;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bold;
-    font-style: italic;
+/* error message css */
+.error-container {
+  text-align: center;
+  font-size: large;
+  margin: 20px 0;
+  overflow-y: hidden;
 }
 
-.nav-items > ul > li {
-    padding: 10px;
-    margin: 10px;
-    cursor: pointer;
+/* about */
+.img-fluid {
+  padding: 70px;
 }
 
-.res-container {
-    display: flex;
-    flex-wrap: wrap;
+.hero {
+  overflow-y: hidden;
 }
 
-.res-card {
-    margin: 5px;
-    width: 23%;
-    padding: 5px;
+/* CSS for mobile devices */
+
+@media only screen and (max-width: 1100px) {
+  .about-container .about-left h1 {
+    font-size: 50px;
+  }
+  .about-container .about-left h4 {
+    font-size: 20px;
+  }
+  .about-container .about-right img {
+    padding-top: 30px;
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 880px) {
+  .about-container .about-left h1 {
+    font-size: 40px;
+  }
+  .about-container .about-left h4 {
+    font-size: 15px;
+  }
+  .about-container .about-right img {
+    padding-top: 30px;
+    width: 350px;
+  }
+  .contact-container {
+    overflow-y: hidden;
+  }
+  .error-page img {
+    height: auto;
+    width: 80%;
+  }
 }
 
-.res-card:hover {
-    cursor: pointer;
-    border: 1px solid black;
+@media only screen and (max-width: 650px) {
+  .about-container .about-right img {
+    width: 300px;
+  }
 }
 
-.search {
-    padding: 10px;
+@media only screen and (max-width: 470px) {
+  .search-container {
+    margin: 80px auto 0px;
+  }
+  .restaurant-menu {
+    margin-top: 60px;
+  }
+  .restaurant-summary {
+    height: 230px;
+  }
+  .about-container {
+    height: auto;
+  }
 }
-
-.res-logo {
-    width: 100%;
-    height: 50%;
-}
-
-.filter {
-    display: flex;
-    justify-content: center;
-}
-
-.filter-btn {
-    margin: 20px 5px;
-    cursor: pointer;
-    background-color: white;
-    padding: 20px;
-    border: 2px solid black;
-    border-radius: 50px;
-}
-
-button.filter-btn:hover {
-    background-color: black;
-    color: white;
+@media only screen and (max-width: 350px) {
+  .search-container {
+    margin: 70px auto 0px;
+  }
+  .restaurant-menu {
+    margin-top: 50px;
+  }
 }
